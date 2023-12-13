@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap');
 
 body {
-    background-color: rgb(240, 239, 239);
+    background-color: rgba(235, 235, 0, 0.326);
 }
 
 header {
@@ -11,12 +11,9 @@ header {
     border-bottom: 1px solid #000;
 }
 
-/* img {
-    filter: grayscale(100%);
-} */
-
 h1 {
     font-family: 'Montserrat Subrayada', sans-serif;
+    align-items: center;
     text-decoration: none;
     font-size: 4rem;
     margin: 0;
