@@ -23,6 +23,9 @@ urlpatterns =[
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
     path('users/', include('django.contrib.auth.urls')),
+    # path('update/', include('update.urls')),
+    # path('delete/', include('delete.urls')),
+
 ]
 
 if settings.DEBUG:

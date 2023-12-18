@@ -6,7 +6,7 @@ from .forms import StoryForm
 from users.models import CustomUser
 from django.shortcuts import get_object_or_404
 # from django.shortcuts import render, redirect
-# from news.forms import ContactForm
+# from .forms import ContactForm
 # from django.http import HttpResponse
 
 class IndexView(generic.ListView):
@@ -49,6 +49,19 @@ class AuthorView(generic.DetailView):
         context = super().get_context_data(**kwargs)
         context['latest_stories'] = NewsStory.objects.filter(author_id=self.object.id)
         return context
+    
+
+class UpdateStoryView(generic.UpdateView):
+    model = NewsStory
+    template_name = 'news/editStory.html'
+    fields = ('title', 'image_url', 'content')
+    success_url = reverse_lazy('news:index')
+
+
+# class DeleteStoryView(generic.DeleteView):
+#     model = NewsStory
+#     template_name = 'news/delete.html'
+#     success_url = reverse_lazy('news:index')
 
 # def contact(request):
 #     if request.method == 'POST':
